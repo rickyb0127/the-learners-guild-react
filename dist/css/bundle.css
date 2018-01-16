@@ -48,3 +48,24 @@
     height: 100px;
     width: 100%;
 }
+
+.dashboard-profile {
+    padding: 25px;
+    border: 1px solid black;
+}
+
+.profile-picture {
+    height: 200px;
+    width: 200px;
+    background-color: red;
+}
+
+.dashboard-feed {
+    padding: 25px;
+    border: 1px solid black;
+}
+
+.dashboard-sidebar-config {
+    padding: 25px;
+    border: 1px solid black;
+}

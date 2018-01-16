@@ -34220,12 +34220,96 @@ module.exports = App;
 "use strict";
 
 var React = require('react');
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
+var IndexLink = ReactRouter.IndexLink;
+
+var Header = React.createClass({displayName: "Header",
+    render: function () {
+        return (
+            React.createElement("div", null, 
+                React.createElement("nav", {className: "navbar navbar-inverse navbar-static-top", role: "navigation"}, 
+                    React.createElement("div", {className: "container"}, 
+                        React.createElement("div", {className: "navbar-header"}, 
+                            React.createElement("button", {type: "button", className: "navbar-toggle collapsed", "data-toggle": "collapse", "data-target": "#bs-example-navbar-collapse-1"}, 
+                                React.createElement("span", {className: "sr-only"}, "Toggle navigation"), 
+                                React.createElement("span", {className: "icon-bar"}), 
+                                React.createElement("span", {className: "icon-bar"}), 
+                                React.createElement("span", {className: "icon-bar"})
+                            ), 
+                            React.createElement(IndexLink, {to: "/", className: "navbar-brand"}, 
+                                React.createElement("div", {className: "nav-logo"}, "Home")
+                            )
+                        ), 
+                        React.createElement("div", {className: "navbar-collapse collapse", id: "bs-example-navbar-collapse-1"}, 
+                            React.createElement("ul", {className: "nav navbar-nav"}, 
+                                React.createElement("li", null, React.createElement(Link, {to: "/about"}, "My Groups")), 
+                                React.createElement("li", null, React.createElement(Link, {to: "/about"}, "Top Teachers")), 
+                                React.createElement("li", null, React.createElement(Link, {to: "/about"}, "ABOUT")), 
+                                React.createElement("li", null, React.createElement("form", {className: "form-inline my-2 my-lg-0"}, 
+                                    React.createElement("input", {className: "form-control mr-sm-2", type: "search", placeholder: "Search", "aria-label": "Search"}), 
+                                    React.createElement("button", {className: "btn btn-outline-success my-2 my-sm-0", type: "submit"}, "Search")
+                                ))
+                            )
+                        )
+                    )
+                )
+            )
+            );
+    }
+});
+
+module.exports = Header;
+
+},{"react":223,"react-router":54}],228:[function(require,module,exports){
+"use strict";
+
+var React = require('react');
+var Header = require('./common/header');
 
 var Dashboard = React.createClass({displayName: "Dashboard",
     render: function () {
         return (
             React.createElement("div", null, 
-            "dashboard"
+                React.createElement(Header, null), 
+                React.createElement("div", {className: "container"}, 
+                    React.createElement("div", {className: "row"}, 
+                        React.createElement("div", {className: "col-md-3"}, 
+                            React.createElement("div", {className: "dashboard-profile"}, 
+                                React.createElement("div", {className: "profile-picture"}, 
+                                    "your image here"
+                                ), 
+                                React.createElement("div", {className: "personal-info"}, 
+                                    "name", 
+                                    React.createElement("br", null), 
+                                    "job title", 
+                                    React.createElement("br", null), 
+                                    "my skills", 
+                                    React.createElement("br", null), 
+                                    "location"
+                                )
+                            )
+                        ), 
+                        React.createElement("div", {className: "col-md-6"}, 
+                            React.createElement("div", {className: "dashboard-feed"}, 
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis purus libero, placerat eu faucibus quis, ullamcorper in tortor. Donec accumsan nibh vel tortor pellentesque, in tempor magna tincidunt. Pellentesque eget sollicitudin erat. Curabitur dapibus ante eget fringilla tincidunt. Proin sodales lorem non posuere rhoncus. Etiam vitae arcu dignissim orci auctor consectetur vitae non orci. Aenean justo sapien, luctus sed vulputate vel, tempus id nunc. Nam auctor venenatis neque, vestibulum pretium mauris congue non. Fusce elit ligula, posuere aliquet tempus at, convallis non ipsum." + ' ' +
+
+                            "Duis suscipit nulla et ligula bibendum, luctus pretium est condimentum. Duis gravida nibh odio, eu dictum libero mollis in. Morbi iaculis ultrices ante nec convallis. Cras sollicitudin arcu ligula, sed ullamcorper nisi facilisis eget. Donec a odio nec mauris tristique consectetur sit amet vel nisl. Vivamus a ullamcorper nibh. Sed non lacus nec quam feugiat iaculis. Aliquam malesuada venenatis nibh, ut viverra dolor sagittis vel. Nullam vulputate nulla quis lorem fringilla venenatis. Cras auctor nulla sed sapien vehicula imperdiet. Proin a suscipit enim. Proin sit amet ipsum urna. Donec faucibus purus eget interdum semper. Suspendisse sit amet lorem non libero porta fermentum eu id massa. Sed sed nulla commodo, semper leo ac, fringilla lectus." + ' ' +
+
+                            "Sed non scelerisque dolor. Donec ornare massa id elit facilisis suscipit. Nulla porttitor dui eu justo bibendum, sit amet iaculis tellus molestie. In ac blandit est. Pellentesque facilisis aliquam tellus. Pellentesque magna urna, maximus non purus quis, blandit mattis dui. Nam congue nulla nec mi tempor, eu dignissim ligula sollicitudin. Pellentesque finibus, mauris nec placerat pellentesque, ante urna pretium nisl, a pretium lectus nisl id arcu. Vivamus mattis cursus nibh eu volutpat. Proin ornare pretium tempor." + ' ' +
+
+                            "Fusce accumsan commodo leo, eu sagittis arcu lobortis in. Quisque faucibus ipsum odio, ac condimentum enim tincidunt sed. Sed gravida elit ut arcu aliquet, sed consectetur risus feugiat. Donec mollis dolor id velit mattis, nec faucibus enim congue. Donec nec fringilla sapien. Sed volutpat enim ut libero vehicula, tristique malesuada augue mattis. Fusce porta sodales magna, nec consectetur libero mattis suscipit. Duis sit amet facilisis lorem. Nullam ullamcorper velit sit amet efficitur mollis. Sed placerat aliquet quam, id maximus magna pulvinar eget. Phasellus ut congue tortor. Curabitur auctor consectetur nisl. Pellentesque sed arcu sit amet ante efficitur sodales." + ' ' +
+
+                            "Praesent tempor pellentesque posuere. Etiam eleifend sit amet risus in porta. Ut nec justo non ligula imperdiet scelerisque placerat id arcu. Fusce egestas orci diam, ac dictum nibh dignissim sed. Quisque egestas volutpat sem quis laoreet. Phasellus quis purus vitae mauris rhoncus fringilla. Vestibulum interdum fringilla justo, in facilisis massa luctus vel. Pellentesque nisl enim, tincidunt sit amet efficitur ut, vulputate ac velit. Duis in euismod nibh, id porttitor urna. Mauris sollicitudin sapien mollis felis ultrices, interdum commodo magna vestibulum. Maecenas ac vehicula orci."
+                            )
+                        ), 
+                        React.createElement("div", {className: "col-md-3"}, 
+                            React.createElement("div", {className: "dashboard-sidebar-config"}, 
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis purus libero, placerat eu faucibus quis, ullamcorper in tortor. Donec accumsan nibh vel tortor pellentesque, in tempor magna tincidunt. Pellentesque eget sollicitudin erat. Curabitur dapibus ante eget fringilla tincidunt. Proin sodales lorem non posuere rhoncus. Etiam vitae arcu dignissim orci auctor consectetur vitae non orci. Aenean justo sapien, luctus sed vulputate vel, tempus id nunc. Nam auctor venenatis neque, vestibulum pretium mauris congue non. Fusce elit ligula, posuere aliquet tempus at, convallis non ipsum."
+                            )
+                        )
+                    )
+                )
             )
             );
     }
@@ -34233,7 +34317,7 @@ var Dashboard = React.createClass({displayName: "Dashboard",
 
 module.exports = Dashboard;
 
-},{"react":223}],228:[function(require,module,exports){
+},{"./common/header":227,"react":223}],229:[function(require,module,exports){
 "use strict";
 
 var React = require('react');
@@ -34327,7 +34411,7 @@ var Home = React.createClass({displayName: "Home",
 
 module.exports = Home;
 
-},{"react":223,"react-router":54}],229:[function(require,module,exports){
+},{"react":223,"react-router":54}],230:[function(require,module,exports){
 "use strict";
 
 var React = require('react');
@@ -34343,7 +34427,7 @@ render(
     document.getElementById('app')
 );
 
-},{"./routes":230,"react":223,"react-dom":26,"react-router":54}],230:[function(require,module,exports){
+},{"./routes":231,"react":223,"react-dom":26,"react-router":54}],231:[function(require,module,exports){
 "use strict";
 
 var React = require('react');
@@ -34367,4 +34451,4 @@ var routes = (
 
 module.exports = routes;
 
-},{"./components/about":225,"./components/app":226,"./components/dashboard":227,"./components/home":228,"react":223,"react-router":54}]},{},[229]);
+},{"./components/about":225,"./components/app":226,"./components/dashboard":228,"./components/home":229,"react":223,"react-router":54}]},{},[230]);
