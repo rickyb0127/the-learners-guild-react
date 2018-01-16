@@ -1,0 +1,38 @@
+.navbar {
+    background-color: transparent;
+    z-index: 100;
+}
+
+.bg-1-overlay {
+    position:absolute; left: 0; right:0; top:0;
+    height: 750px;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.bg-img {
+    position:absolute; left: 0; right:0; top:0;
+    height: 750px;
+    width: 100%;
+}
+
+.index-txt {
+    text-align: center;
+    font-family: fantasy;
+}
+
+.head-format {
+    position: relative;
+    top: 20%;
+}
+
+.modal {
+    display: block;
+}
+
+.secondary-content {
+    position: relative;
+    height: 100px;
+    width: 100%;
+}
